@@ -38,39 +38,31 @@ public:
         bool isOverflow = false;
         ListNode *it1 = l1;
         ListNode *it2 = l2;
-        vector<int> res;
+        ListNode *ansRoot = new ListNode(0);
+        ListNode *curs = ansRoot;
         while (it1 || it2)
         {
             int val1 = it1 ? it1->val : 0;
             int val2 = it2 ? it2->val : 0;
             int temp = !isOverflow ? (val1 + val2) : (val1 + val2 + 1);
-            if (temp < 10)
-            {
-                isOverflow = false;
-                res.push_back(temp);
-            }
-            else
-            {
-                isOverflow = true;
-                res.push_back(temp % 10);
-            }
+
+            isOverflow = (temp >= 10);
             it1 = it1 ? it1->next : nullptr;
             it2 = it2 ? it2->next : nullptr;
+
+            temp = isOverflow ? temp % 10 : temp;
+            ListNode *tempNode = new ListNode(temp);
+            curs->next = tempNode;
+            curs = tempNode;
         }
 
         if (!it1 && !it2 && isOverflow)
-            res.push_back(1);
-
-        int len = res.size();
-        ListNode *resList = new ListNode(res[0]);
-        ListNode *itr = resList;
-        for (int i = 1; i < len; i++)
         {
-            ListNode *tempNode = new ListNode(res[i]);
-            itr->next = tempNode;
-            itr = itr->next;
+            ListNode *tempNode = new ListNode(1);
+            curs->next = tempNode;
         }
-        return resList;
+
+        return ansRoot->next;
     }
 };
 // @lc code=end
