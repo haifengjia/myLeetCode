@@ -14,7 +14,7 @@ Pass all the testcases
 ### 2
 
 2020/09/13
-Only pass some of the testcases, such as the instance.
+成功 pass，但是内存和 runtime 还不是很满意。
 
 ### 3
 
