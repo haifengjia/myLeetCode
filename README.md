@@ -1,10 +1,16 @@
 # myLeetCode
 
-## some basic info
+## Some basic info
 
 For lack of Data Structure knowledge, from now on I will focus on the questions of easy level. The hard and medium ones will be continued after maybe my senior 3. Practice makes perfection! Have fun.
 
-## solution reviews
+## The structure
+
+在 zilaio 文件夹存储了一些必要的资料；
+main.cpp 和 main，还有 build 文件夹是用来本地 CMake 来 debug 的（test.in 用作测试的输入文件）
+剩下的文件就是我的题解。
+
+## Solution reviews
 
 ### 1
 
@@ -27,9 +33,16 @@ Pass all the testcases
 用来提交的那个是学习别人的答案
 这个 unodered set 很妙 叫做哈希集合 刚好满足这里的情形
 
-## 7
+### 7
 
 2020/09/18
 整数翻转
 2020/12/17
 finish, pass
+
+### 746
+
+2020/12/22
+这道题是 recursion+动态规划 DP，学习了一下 DP 的知识和概念，ziliao 文件夹里有一个课件资料。
+一开始的 runtime 超出范围了，最后用备忘录 memo[]解决了问题，减小了复杂度。
+目前的 runtime 和 memory 都不是很理想，有待改进。

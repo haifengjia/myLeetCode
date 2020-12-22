@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/mnt/d/Documents/LeetCode/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-9    -g   -o CMakeFiles/main.dir/main.cpp.o -c /mnt/d/Documents/LeetCode/main.cpp",
+  "file": "/mnt/d/Documents/LeetCode/main.cpp"
+}
+]
