@@ -5,50 +5,28 @@
 #include <algorithm>
 
 using namespace std;
-class Solution
+
+static inline bool isPal(string s)
 {
-
-public:
-    int memo[1000]; // DP beiwanglu
-
-    Solution()
+    if (s.size() % 2 == 0)
     {
-        for (int i = 0; i < 1000; i++)
-            memo[i] = -1;
-    };
-
-    int helper(vector<int> &cost, int i)
-    {
-        if (memo[i] != -1)
-            return memo[i];
-        else
-        {
-            int len = cost.size();
-            if (i == 1 || i == 0)
-                memo[i] = cost[i];
-            else
-                memo[i] = min(helper(cost, i - 1), helper(cost, i - 2)) + cost[i];
-
-            return memo[i];
-        }
+        string t = s.substr(s.size() / 2, s.size() / 2);
+        reverse(t.begin(), t.end());
+        return s.substr(0, s.size() / 2) == t;
     }
-
-    int minCostClimbingStairs(vector<int> &cost)
+    else
     {
-
-        int len = cost.size();
-        return min(helper(cost, len - 1), helper(cost, len - 2));
+        string t = s.substr(s.size() / 2 + 1, s.size() / 2);
+        reverse(t.begin(), t.end());
+        return s.substr(0, s.size() / 2) == t;
     }
-};
+}
 
 int main()
 {
-    Solution sol;
-    vector<int> vec;
-    int n;
-    while (cin >> n)
-        vec.push_back(n);
-
-    cout << sol.minCostClimbingStairs(vec) << endl;
+    cout << "input: ";
+    string s;
+    cin >> s;
+    cout << isPal(s) << endl;
     return 0;
 }
