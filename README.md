@@ -78,3 +78,10 @@ finish, pass
 2021/07/17
 
 没啥问题，很正常的一道递归，和官方答案一致，pass
+
+### 133
+
+2021/07/20
+
+使用 hash table 来存储已经访问过的结点，然后对 neighbors 进行 DFS 递归遍历即可
+tip：STL 里，hash 是 **unordered_map**
