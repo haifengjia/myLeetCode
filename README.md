@@ -86,6 +86,12 @@ finish, pass
 使用 hash table 来存储已经访问过的结点，然后对 neighbors 进行 DFS 递归遍历即可
 tip：STL 里，hash 是 **unordered_map**
 
-### 207
+### 997
 
-2021/07/21
+2021/07/22
+
+图，邻接表的寻找操作，基本上是数组题
+
+- `find_if(beg, end, [](para x){return ...})` -> 寻找 vector 里符合相关条件的元素
+- `find()` -> 寻找 vector 里某个元素，如果不存在则最终位于尾后迭代器 end
+- 从 itr 到 index 直接做 `(itr-vec.begin())` 即可
