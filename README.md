@@ -95,3 +95,9 @@ tip：STL 里，hash 是 **unordered_map**
 - `find_if(beg, end, [](para x){return ...})` -> 寻找 vector 里符合相关条件的元素
 - `find()` -> 寻找 vector 里某个元素，如果不存在则最终位于尾后迭代器 end
 - 从 itr 到 index 直接做 `(itr-vec.begin())` 即可
+
+### 1137 & 509
+
+2021/08/11
+
+DP 常规操作，pass
