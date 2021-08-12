@@ -6,50 +6,32 @@
 
 using namespace std;
 
-inline size_t summation(size_t n)
+int rob(vector<int> &nums)
 {
-    return (26 * (pow(26, n) - 1) / 25);
-}
-
-string convertToTitle(int columnNumber)
-{
-    size_t tt_len = 0;
-    string res;
-    if (columnNumber < 26)
+    size_t n = nums.size();
+    int a0 = nums[0];
+    if (n == 1)
+        return a0;
+    int a1 = max(nums[0], nums[1]);
+    if (n == 2)
+        return a1;
+    int a2 = max(a0 + nums[2], a1);
+    if (n == 3)
+        return a2;
+    int temp;
+    for (int i = 0; i < (int)(n - 3); i++)
     {
-        res += ((char)(64 + columnNumber));
-        return res;
+        temp = max(a1 + nums[3 + i], a2);
+        a0 = a1;
+        a1 = a2;
+        a2 = temp;
     }
-
-    while (1)
-    {
-        if (summation(tt_len) >= static_cast<size_t>(columnNumber))
-            break;
-        tt_len++;
-    }
-    columnNumber -= summation(tt_len - 1);
-    int dig;
-    for (size_t i = 0; i < tt_len; i++)
-    {
-        if (i == tt_len - 1)
-        {
-            res += ((char)(64 + columnNumber));
-            break;
-        }
-
-        if (columnNumber > 0)
-            dig = ((columnNumber - 1) / (pow(26, tt_len - i - 1)));
-        else
-            dig = 0;
-        res += (char)(65 + dig);
-        columnNumber -= dig * (pow(26, tt_len - i - 1));
-    }
-    return res;
+    return a2;
 }
 
 int main()
 {
-    string a = convertToTitle(52);
-    cout << a + "\n";
+    vector<int> vec = {1, 2, 3, 1};
+    cout << rob(vec) << "\n";
     return 0;
 }
