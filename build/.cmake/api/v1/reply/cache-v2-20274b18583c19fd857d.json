@@ -887,7 +887,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "test"
+			"value" : "main"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1998,7 +1998,7 @@
 			"value" : ""
 		},
 		{
-			"name" : "test_BINARY_DIR",
+			"name" : "main_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -2010,7 +2010,7 @@
 			"value" : "/mnt/d/Documents/LeetCode/build"
 		},
 		{
-			"name" : "test_SOURCE_DIR",
+			"name" : "main_SOURCE_DIR",
 			"properties" : 
 			[
 				{

@@ -5,6 +5,7 @@
  */
 #include <vector>
 #include <unordered_map>
+#include <algorithm>
 
 using std::max;
 using std::unordered_map;
@@ -16,9 +17,9 @@ class Solution
 public:
     int deleteAndEarn(vector<int> &nums)
     {
-        vector<int> tb(10000);
+        vector<int> tb(*max_element(nums.begin(), nums.end()));
         for (size_t i = 0; i < nums.size(); i++)
-            tb[nums[i]] += nums[i];
+            tb[nums[i] - 1] += nums[i];
         return rob(tb);
     }
     int rob(vector<int> &nums)

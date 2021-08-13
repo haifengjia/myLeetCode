@@ -150,7 +150,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=test
+CMAKE_PROJECT_NAME:STATIC=main
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0
@@ -330,10 +330,10 @@ SLURM_SRUN_COMMAND:FILEPATH=SLURM_SRUN_COMMAND-NOTFOUND
 SVNCOMMAND:FILEPATH=SVNCOMMAND-NOTFOUND
 
 //Value Computed by CMake
-test_BINARY_DIR:STATIC=/mnt/d/Documents/LeetCode/build
+main_BINARY_DIR:STATIC=/mnt/d/Documents/LeetCode/build
 
 //Value Computed by CMake
-test_SOURCE_DIR:STATIC=/mnt/d/Documents/LeetCode
+main_SOURCE_DIR:STATIC=/mnt/d/Documents/LeetCode
 
 
 ########################
