@@ -47,6 +47,8 @@
 
 int cmp(const void *a, const void *b)
 {
+    printf("%d, %d\n", ((const int **)a)[0], ((const int **)a)[1]);
+    printf("%d, %d\n", ((const int **)b)[0], ((const int **)b)[1]);
     return (((const int **)a)[0] == ((const int **)b)[0]) ? (((const int **)a)[1] - ((const int **)b)[1])
                                                           : (((const int **)a)[0] - ((const int **)b)[0]);
 }
@@ -67,6 +69,7 @@ void print2dArray(int **intervals, int intervalsSize, int *intervalsColSize)
 int removeCoveredIntervals(int **intervals, int intervalsSize, int *intervalsColSize)
 {
     int res = intervalsSize;
+    printf("%d\n", cmp(intervals, intervals + 1));
     qsort(intervals, intervalsSize, sizeof(int *), cmp);
     print2dArray(intervals, intervalsSize, intervalsColSize);
     for (size_t i = 0; i < intervalsSize - 1; ++i)
