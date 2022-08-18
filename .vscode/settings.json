@@ -1,5 +1,8 @@
 {
-    "files.associations": {
-        "cstdlib": "cpp"
-    }
+  "files.associations": {
+    "*.query": "sql",
+    "cstdlib": "cpp",
+    "stdlib.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
