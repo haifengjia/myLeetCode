@@ -40,11 +40,56 @@
  *
  *
  */
+#include <stdio.h>
+#include <stdlib.h>
 
 // @lc code=start
 
+int cmp(const void *a, const void *b)
+{
+    return (((const int **)a)[0] == ((const int **)b)[0]) ? (((const int **)a)[1] - ((const int **)b)[1])
+                                                          : (((const int **)a)[0] - ((const int **)b)[0]);
+}
+
+void print2dArray(int **intervals, int intervalsSize, int *intervalsColSize)
+{
+    for (int i = 0; i < intervalsSize; i++)
+    {
+        printf("[");
+        for (int j = 0; j < intervalsColSize[i]; j++)
+        {
+            printf("%d,", intervals[i][j]);
+        }
+        printf("] ");
+    }
+}
+
 int removeCoveredIntervals(int **intervals, int intervalsSize, int *intervalsColSize)
 {
-    ;
+    int res = intervalsSize;
+    qsort(intervals, intervalsSize, sizeof(int *), cmp);
+    print2dArray(intervals, intervalsSize, intervalsColSize);
+    for (size_t i = 0; i < intervalsSize - 1; ++i)
+    {
+        if ((intervals[i][0] <= intervals[i + 1][0]) && (intervals[i][1] >= intervals[i + 1][1]))
+        {
+            --res;
+            size_t j = 2;
+            for (; j < intervalsSize - i;)
+            {
+                if ((intervals[i][0] <= intervals[i + j][0]) && (intervals[i][1] >= intervals[i + j][1]))
+                {
+                    ++j;
+                    --res;
+                }
+                else
+                    break;
+            }
+            i += j;
+        }
+        else
+            continue;
+    }
+    return res;
 }
 // @lc code=end

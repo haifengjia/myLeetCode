@@ -2,7 +2,8 @@
   "files.associations": {
     "*.query": "sql",
     "cstdlib": "cpp",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "random": "c"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
